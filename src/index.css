@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: "Inter", "Noto Sans Tamil", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: "Inter", "Noto Sans Tamil", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+    /* Responsive Typography Scale (Mobile -> Tablet/Desktop Standards) */
+    --fs-dashboard-heading: 1.25rem;  /* 20px mobile -> 24px desktop */
+    --fs-page-title: 1.1875rem;       /* 19px mobile -> 22px desktop */
+    --fs-section-heading: 1rem;       /* 16px mobile -> 18px desktop */
+    --fs-card-title: 0.9375rem;       /* 15px mobile -> 16px desktop */
+    --fs-body: 0.875rem;              /* 14px */
+    --fs-sidebar-menu: 0.875rem;      /* 14px */
+    --fs-table-header: 0.875rem;      /* 14px */
+    --fs-table-cell: 0.875rem;        /* 14px */
+    --fs-button: 0.875rem;            /* 14px */
+    --fs-label: 0.875rem;             /* 14px */
+    --fs-input: 0.875rem;             /* 14px */
+    --fs-helper: 0.75rem;             /* 12px */
+    --fs-notification: 0.875rem;      /* 14px */
+
+    --lh-tight: 1.25;
+    --lh-snug: 1.35;
+    --lh-normal: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --fs-dashboard-heading: 1.5rem;   /* 24px */
+      --fs-page-title: 1.375rem;        /* 22px */
+      --fs-section-heading: 1.125rem;   /* 18px */
+      --fs-card-title: 1rem;            /* 16px */
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    line-height: var(--lh-normal);
+    font-weight: 400;
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  .typo-dashboard-title {
+    font-family: var(--font-display);
+    font-size: var(--fs-dashboard-heading);
+    line-height: var(--lh-tight);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .typo-page-title {
+    font-family: var(--font-display);
+    font-size: var(--fs-page-title);
+    line-height: var(--lh-tight);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+
+  .typo-section-heading {
+    font-family: var(--font-display);
+    font-size: var(--fs-section-heading);
+    line-height: var(--lh-snug);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .typo-card-title {
+    font-family: var(--font-display);
+    font-size: var(--fs-card-title);
+    line-height: var(--lh-snug);
+    font-weight: 700;
+  }
+
+  .typo-body {
+    font-size: var(--fs-body);
+    line-height: var(--lh-normal);
+    font-weight: 400;
+  }
+
+  .typo-sidebar-item {
+    font-size: var(--fs-sidebar-menu);
+    line-height: var(--lh-snug);
+    font-weight: 500;
+  }
+
+  .typo-table-th {
+    font-size: var(--fs-table-header);
+    line-height: var(--lh-snug);
+    font-weight: 600;
+  }
+
+  .typo-table-td {
+    font-size: var(--fs-table-cell);
+    line-height: var(--lh-normal);
+    font-weight: 400;
+  }
+
+  .typo-btn {
+    font-size: var(--fs-button);
+    line-height: var(--lh-snug);
+    font-weight: 500;
+  }
+
+  .typo-label {
+    font-size: var(--fs-label);
+    line-height: var(--lh-snug);
+    font-weight: 500;
+  }
+
+  .typo-input {
+    font-size: var(--fs-input);
+    line-height: var(--lh-normal);
+    font-weight: 400;
+  }
+
+  .typo-helper {
+    font-size: var(--fs-helper);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  .typo-notification {
+    font-size: var(--fs-notification);
+    line-height: var(--lh-normal);
+    font-weight: 400;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes nivasDropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-dropdown-in {
+  animation: nivasDropdownIn 160ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-dropdown-in {
+    animation: none;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt,
+  #printable-receipt * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}

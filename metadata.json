@@ -1,0 +1,6 @@
+{
+  "name": "NivasDesk — Hostel & PG Management",
+  "description": "Multi-tenant Hostel & PG Registration, Stay, Room, Payment, Document, and Verification Management Dashboard for Indian hostel owners and wardens.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
